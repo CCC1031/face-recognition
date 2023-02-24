@@ -1,0 +1,12 @@
+.form { 
+    background: linear-gradient(to right, #e9e7e7, #9c9c9c);  
+}
+input {
+    box-shadow: 5px 5px 55px 5px #0d095a;
+    background: linear-gradient(to right, #86cee0, #ecedd7);
+}
+.text-display {
+    text-align: center;
+    color: white;
+}
+
