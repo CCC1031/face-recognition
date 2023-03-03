@@ -6,11 +6,13 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Main from "./components/Main";
-import Clarifai, { FACE_DETECT_MODEL } from 'clarifai'; 
+import Clarifai from 'clarifai'; 
+
+
 
 
 const app = new Clarifai.App({
-  apiKey: 'b05daf02f775464980d4b2713fa96dd2'
+  apiKey: 'c16af9b03dce43ae92c4ad8870e13966'
 });
 
 class App extends Component {
@@ -39,6 +41,7 @@ class App extends Component {
     }
 
     displayFaceBox = (box) => {
+      console.log(box);
       this.setState({box: box});
     }
 
@@ -46,7 +49,7 @@ class App extends Component {
       this.setState({input:e.target.value});
     }
 
-    onButtonSubmit = () => {
+  onButtonSubmit = () => {
       this.setState({imageUrl: this.state.input}); 
       
   app.models
@@ -104,13 +107,11 @@ return (
               box={this.state.box} 
               imageUrl={this.state.imageUrl} />
             </div>
-          : (
+            : (
             route === 'signin' 
             ? <Signin onRouteChange={this.onRouteChange}/> 
             : <Register onRouteChange={this.onRouteChange}/>
           )
-          
-  
           }
    </div> 
 );
